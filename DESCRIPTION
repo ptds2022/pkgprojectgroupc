@@ -10,23 +10,17 @@ Author: c(
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: This package provides a shiny app which enables the user to find the gas station. 
   In addition it outputs a map with all the location of the user and the locations of the gas station in the distance given by the user. 
-Imports:
+Imports:usethis,
   tmaptools,
   geosphere,
   shiny,
   shinyWidgets,
   ggmap,
-  tidyverse,
   here,
   rvest,
-  highcharter,
-  tibble,
-  countrycode,
-  RSelenium,
-  dplyr,
-  tidyr,
   tmaptools,
-  geosphere
+  geosphere,
+  ggplot2
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

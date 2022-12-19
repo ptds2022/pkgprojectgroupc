@@ -12,7 +12,7 @@
 run_app <- function(){
   # Frontend
   ui <- fluidPage(
-    setBackgroundColor(
+    shinyWidgets::setBackgroundColor(
       color = "LightSkyBlue"
     ),
 
