@@ -39,7 +39,7 @@ ui <- fluidPage(
     sidebarPanel(
       numericInput("max_dist",
                    label = "chose the maximum distance you want to drive in km",
-                   value = 5
+                   value = 20
       ),
       selectInput("type", label = "please select the desired fuel type",
                   choices = c("unlead98", "diesel", "cng"),
