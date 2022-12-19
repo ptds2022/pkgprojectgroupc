@@ -4,7 +4,7 @@
 \alias{get_map_data}
 \title{get map data}
 \usage{
-get_map_data(stations_in_radius, lat, long)
+get_map_data(stations_in_radius, lat, long, best_station)
 }
 \arguments{
 \item{stations_in_radius}{Data of the gas station in the radius}
@@ -12,6 +12,8 @@ get_map_data(stations_in_radius, lat, long)
 \item{lat}{Latitude of the user}
 
 \item{long}{Longitude of the user}
+
+\item{best_station}{A one line \code{dataframe} with the best gas station}
 }
 \value{
 A \code{dataframe} with information about the gas stations and the user

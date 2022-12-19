@@ -119,7 +119,7 @@ run_app <- function(){
 
     map_dataInput <- reactive({
       # Get data for the map
-      get_map_data(stations_in_radius, input$lat, input$long)
+      get_map_data(stations_in_radius(), input$lat, input$long, best_station())
     })
 
     output$map <- renderPlot({
