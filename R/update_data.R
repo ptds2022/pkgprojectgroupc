@@ -1,5 +1,11 @@
-source(here::here("data-raw/webscrap_data.R")) # Maybe it's not necessary to keep !
-
+#' @title update_data
+#'
+#' @description Adds the longitude and latitude data to the web scrapped data
+#' @return A \code{dataframe} with gas stations data including longitude and latitude
+#' @author Clarence, Franz, Mathieu, Lucas
+#' @export
+#' @examples
+#' "hallo"
 update_data <- function(){
   # Webscrap data for latest prices
   full_set <- webscrap_data()

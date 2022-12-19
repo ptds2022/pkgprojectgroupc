@@ -1,6 +1,6 @@
 Package: pkgprojectgroupc
 Type: Package
-Title: package for the project of group c: Finding the most suitable gasstation
+Title: package for the project of group c: Finding the best gasstation
 Version: 0.1.0
 Author: c(
   person("Clarence", "Koehle", role = c("aut")),
@@ -8,20 +8,28 @@ Author: c(
   person("Lucas", "Vogt", role = c("aut", "ctb")),
   person("Franz", "Wetzel", email = "franz.wetzel@unil.ch", role = "cre"))
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: Create a shiny application that suggests the cheapest option to fill up the gas considering the following criteria:
-  Current location (manually entered or using device geolocation)
-  Price of the gas currently in the car (manually entered or guessed if missing)
-  Distance to the surrounding gas stations
-  Cost to get to each station
-  Current price of gas at the station
-  Total cost to get to the final destination (manually entered or null if missing)
-Imports:
+Description: This package provides a shiny app which enables the user to find the gas station. 
+  In addition it outputs a map with all the location of the user and the locations of the gas station in the distance given by the user. 
+Imports:usethis,
   tmaptools,
-  geosphere
+  geosphere,
+  shiny,
+  shinyWidgets,
+  ggmap,
+  here,
+  rvest,
+  tmaptools,
+  geosphere,
+  ggplot2,
+  dplyr,
+  tidyr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 RoxygenNote: 7.2.2
+VignetteBuilder: knitr
