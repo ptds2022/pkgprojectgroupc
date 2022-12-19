@@ -6,6 +6,7 @@
 #' and a map with the location of the user and all the gas stations which are in the given distance.
 #' @return A shiny app which can be used to find the best gas station
 #' @author Clarence, Franz, Mathieu, Lucas
+#' @import shiny
 #' @export
 #' @examples
 #' "hallo"
@@ -128,7 +129,7 @@ run_app <- function(){
         # If there at least one gas station, return the map
         ggmap::ggmap(mapInput()) +
           ggplot2::geom_point(data = map_dataInput(),
-                              aes(x = lon, y = lat, color = Locations),
+                              ggplot2::aes(x = lon, y = lat, color = Locations),
                               size = 3) +
           ggplot2::theme(
             plot.background = element_rect(fill = 'transparent', color = NA),

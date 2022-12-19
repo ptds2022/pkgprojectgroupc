@@ -1,7 +1,7 @@
 #' @title get map data
 #'
 #' @description creation of map data: take data from gas stations and adds spatial data of user
-#' @param station_in_radius Data of the gas station in the radius
+#' @param stations_in_radius Data of the gas station in the radius
 #' @param lat Latitude of the user
 #' @param long Longitude of the user
 #' @return A \code{dataframe} with information about the gas stations and the user

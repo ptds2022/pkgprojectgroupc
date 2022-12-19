@@ -7,11 +7,11 @@
 get_map_data(stations_in_radius, lat, long)
 }
 \arguments{
+\item{stations_in_radius}{Data of the gas station in the radius}
+
 \item{lat}{Latitude of the user}
 
 \item{long}{Longitude of the user}
-
-\item{station_in_radius}{Data of the gas station in the radius}
 }
 \value{
 A \code{dataframe} with information about the gas stations and the user
