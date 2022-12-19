@@ -30,6 +30,10 @@ An extension could be made through the implementation of the journey to take fro
 In order to run the application, you need to download the whole package "pkgprojectgroupc". 
 Then you run the file "main_app.R" on R. This will prompt up a shiny app that you can open on your browser. 
 Once the app is loaded, you will be able to enter your adress in the section dedicated to it.
+To load the website you have to run the three following command in the console once the package installed:
+library(pkgdown)
+usethis::use_pkgdown()
+pkgdown::build_site()
 
 # 5. How to use the project
 
