@@ -1,4 +1,4 @@
-
+# test for measure dist
 test_that("test measure_dist", {
   address_applicant <- "Avenue des Bains 14, 1007 Lausanne"
   lat <- as.numeric(tmaptools::geocode_OSM(address_applicant,
