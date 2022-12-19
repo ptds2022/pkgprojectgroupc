@@ -1,18 +1,13 @@
 #' @title get stations in radius
 #'
-#' @description computes the distances between the current location and the location of the gas stations
-#' @param addresses A \code{vector} with the addresses of the gasstation and the location of the applicant
-#' @return A \code{dataframe} with information about:\describe{
-#'    \item{the addresses}
-#'    \item{the latitutes}
-#'    \itemt{the longitute}
-#'    \item{the distances}
-#' }
+#' @description Selects form all the data only those gas stations which are in the radius given by the user
+#' @param stations_data A \code{dataframe} with the data of the gas stations
+#' @param max_dist A numeric value which determines the maximum distance in km
+#' @return A \code{dataframe} with the data about the gas stations in the radius
 #' @author Clarence, Franz, Mathieu, Lucas
 #' @export
 #' @examples
-#' addresses <- c("Unter den Linden 25, 10117 Berlin", "Av. de la Gare 12, 1003 Lausanne", "Kurfürstendamm 100, 10709 Berlin")
-#' measure_dist(addresses = addresses)
+#' "hallo"
 get_stations_in_radius <- function(stations_data, max_dist){
   # This function gets the stations that are within the desired radius (input
   # by the user)

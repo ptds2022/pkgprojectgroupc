@@ -1,19 +1,11 @@
-source(here::here("data-raw/webscrap_data.R")) # Maybe it's not necessary to keep !
 #' @title update_data
 #'
-#' @description computes the distances between the current location and the location of the gas stations
-#' @param addresses A \code{vector} with the addresses of the gasstation and the location of the applicant
-#' @return A \code{dataframe} with information about:\describe{
-#'    \item{the addresses}
-#'    \item{the latitutes}
-#'    \itemt{the longitute}
-#'    \item{the distances}
-#' }
+#' @description Adds the longitude and latitude data to the web scrapped data
+#' @return A \code{dataframe} with gas stations data including longitude and latitude
 #' @author Clarence, Franz, Mathieu, Lucas
 #' @export
 #' @examples
-#' addresses <- c("Unter den Linden 25, 10117 Berlin", "Av. de la Gare 12, 1003 Lausanne", "Kurfürstendamm 100, 10709 Berlin")
-#' measure_dist(addresses = addresses)
+#' "hallo"
 update_data <- function(){
   # Webscrap data for latest prices
   full_set <- webscrap_data()

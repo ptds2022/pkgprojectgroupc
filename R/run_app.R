@@ -60,6 +60,10 @@ run_app <- function(){
     ))
 
   # # Backend
+  # Enter API code
+  api_key <- readline(prompt="Please enter your Google API key:") # Prompting the user to enter API key
+  ggmap::register_google(key = api_key) # Register to google API using the user input api_key
+
   # Get latest data in a format that can be processed by the app
   data_update <- readline(prompt = "Do you want to update the data? ~5 minutes (Enter 1 (yes) 0 (no): ")
   if (data_update == 1){
@@ -104,6 +108,7 @@ run_app <- function(){
     })
 
     mapInput <- reactive({
+
       # Access to Google map through the API
       if (is.null(input$lat) & is.null(input$long)){
         ggmap::get_map(paste(46.524239, 6.583689), zoom = 12)  # If getting the current location of user doesn't work

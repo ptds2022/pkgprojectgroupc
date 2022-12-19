@@ -1,18 +1,17 @@
 #' @title webscrap data
 #'
-#' @description computes the distances between the current location and the location of the gas stations
-#' @param addresses A \code{vector} with the addresses of the gasstation and the location of the applicant
-#' @return A \code{dataframe} with information about:\describe{
-#'    \item{the addresses}
-#'    \item{the latitutes}
-#'    \itemt{the longitute}
-#'    \item{the distances}
+#' @description webscrapping of data from fuelo website
+#' @return A \code{dataframe} with gas stations data including:\describe{
+#'    \item{brand}
+#'    \item{name}
+#'    \itemt{type of fuel}
+#'    \item{price of fuel}
+#'    \item{address}
 #' }
 #' @author Clarence, Franz, Mathieu, Lucas
 #' @export
 #' @examples
-#' addresses <- c("Unter den Linden 25, 10117 Berlin", "Av. de la Gare 12, 1003 Lausanne", "Kurfürstendamm 100, 10709 Berlin")
-#' measure_dist(addresses = addresses)
+#' "hallo"
 webscrap_data <- function(){
   # # Fetch gas station informations
   # url for Aargau province gas stations
