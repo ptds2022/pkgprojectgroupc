@@ -70,7 +70,7 @@ run_app <- function(){
   if (data_update == 1){
     data_gasstations <- update_data()
   } else {
-    data_gasstations <- select(read.csv(here::here("data/gas_station_distances.csv")), -X)
+    data_gasstations <- dplyr::select(read.csv(here::here("data/gas_station_distances.csv")), -X)
   }
 
   server <- function(input, output){
@@ -132,8 +132,8 @@ run_app <- function(){
                               ggplot2::aes(x = lon, y = lat, color = Locations),
                               size = 3) +
           ggplot2::theme(
-            plot.background = element_rect(fill = 'transparent', color = NA),
-            legend.background = element_rect(fill='transparent')
+            plot.background = ggplot2::element_rect(fill = 'transparent', color = NA),
+            legend.background = ggplot2::element_rect(fill='transparent')
           )
       }
     }, bg = "transparent")

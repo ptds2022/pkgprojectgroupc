@@ -192,7 +192,7 @@ webscrap_data <- function(){
   all_stations <- all_stations[c(-4,-5)]
 
   # Use the separate() function to split the "Name" column into two new columns: "Brand" and "Name"
-  all_stations <- all_stations %>% separate(Name, c("Brand", "Name"))
+  all_stations <- all_stations %>% tidyr::separate(Name, c("Brand", "Name"))
 
 
   # # Get gas price
@@ -244,14 +244,14 @@ webscrap_data <- function(){
   # bind all the gas price data together into a single data frame
   all_prices <- rbind(unlead_prices, unlead98_prices, diesel_prices, cng_prices)
   # split the "X1" column into three separate columns called "Brand", "Type", and "Specificity"
-  all_prices <- all_prices %>% separate(X1, c("Brand", "Type", "Specificity"))
+  all_prices <- all_prices %>% tidyr::separate(X1, c("Brand", "Type", "Specificity"))
   # rename the "X2" and "X3" columns to "Price" and "Percentage_Change" respectively
   all_prices <- all_prices %>%
-    rename(Price = X2,
+    dplyr::rename(Price = X2,
            Percentage_Change = X3)
   # remove the 2nd and 3rd rows and rename the "new" column to "Type"
   all_prices <- all_prices[-c(2,3)] %>%
-    rename(
+    dplyr::rename(
       Type = new
     )
 
@@ -266,7 +266,7 @@ webscrap_data <- function(){
   full_set$Address <- paste(full_set$Address, full_set$City, sep = ", ")
 
   # remove the column City from the dataframe
-  full_set <- select(full_set, -City)
+  full_set <- dplyr::select(full_set, -City)
 
   # remove any instances of the "№" character from the "Address" column
   full_set$Address <- gsub('№','', full_set$Address)

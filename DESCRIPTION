@@ -20,7 +20,9 @@ Imports:usethis,
   rvest,
   tmaptools,
   geosphere,
-  ggplot2
+  ggplot2,
+  dplyr,
+  tidyr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
