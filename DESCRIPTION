@@ -17,6 +17,20 @@ Description: Create a shiny application that suggests the cheapest option to fil
   Total cost to get to the final destination (manually entered or null if missing)
 Imports:
   tmaptools,
+  geosphere,
+  shiny,
+  shinyWidgets,
+  ggmap,
+  tidyverse,
+  here,
+  rvest,
+  highcharter,
+  tibble,
+  countrycode,
+  RSelenium,
+  dplyr,
+  tidyr,
+  tmaptools,
   geosphere
 License: MIT + file LICENSE
 Encoding: UTF-8

@@ -13,7 +13,6 @@
 #' @examples
 #' addresses <- c("Unter den Linden 25, 10117 Berlin", "Av. de la Gare 12, 1003 Lausanne", "Kurfürstendamm 100, 10709 Berlin")
 #' measure_dist(addresses = addresses)
-
 measure_dist <- function(data_gasstations, lat, long){
   # If getting the current location of user doesn't work
   if (is.null(lat) & is.null(long)){
