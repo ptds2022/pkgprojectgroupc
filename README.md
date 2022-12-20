@@ -46,6 +46,6 @@ Here is a quick guide on what those function are made for:
 - "measure_dist.R" : computes the distances between the current location and the location of the gas stations
 - "run_app.R" : allows to load the shiny app to find the best gas station
 - "update_data.R" : update the data from the source website in order to have your result updated to the current locations
-- "webscapp_data.R" : it will scrap all the information from the website to generate the needed csv file.
+- "webscrap_data.R" : it will scrap all the information from the website to generate the needed csv file.
 
 
