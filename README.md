@@ -47,7 +47,3 @@ Here is a quick guide on what those function are made for:
 - "get_best_station.R" : Function made to provide the cheapest gaz station in terms of price
 - "get_map_data.R" : Function to create the  map with all the latitude / longitude of each gaz station
 - "run_app.R" : allows to load the shiny app to find the best gas station
-
-
-
-
