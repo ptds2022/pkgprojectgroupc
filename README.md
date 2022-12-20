@@ -39,13 +39,15 @@ To load the website you have to run the three following command in the console o
 
 If you want to modify the project, you can do it through the "R" folder where all our function are located. 
 Here is a quick guide on what those function are made for:
+- "google_register.R" : Prompting the user to enter API key
+- "webscrap_data.R" : it will scrap all the information from the website to generate the needed csv file.
+- "update_data.R" : update the data from the source website in order to have your result updated to the current locations
+- "measure_dist.R" : computes the distances between the current location and the location of the gas stations
+- "get_station_in_radius.R" : computes the distances between the current location and the location of the gas stations
 - "get_best_station.R" : Function made to provide the cheapest gaz station in terms of price
 - "get_map_data.R" : Function to create the  map with all the latitude / longitude of each gaz station
-- "get_station_in_radius.R" : computes the distances between the current location and the location of the gas stations
-- "google_register.R" : Prompting the user to enter API key
-- "measure_dist.R" : computes the distances between the current location and the location of the gas stations
 - "run_app.R" : allows to load the shiny app to find the best gas station
-- "update_data.R" : update the data from the source website in order to have your result updated to the current locations
-- "webscrap_data.R" : it will scrap all the information from the website to generate the needed csv file.
+
+
 
 
