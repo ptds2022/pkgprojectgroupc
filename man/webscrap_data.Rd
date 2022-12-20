@@ -4,7 +4,7 @@
 \alias{webscrap_data}
 \title{webscrap data}
 \usage{
-webscrap_data()
+webscrap_data(save_csv_folder = here::here("data/gas_station_data.csv"))
 }
 \value{
 A \code{dataframe} with gas stations data including:\describe{
