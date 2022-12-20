@@ -1,3 +1,4 @@
+source(here::here("google_register/google_register.R"))
 library("shiny")
 library("shinyWidgets")
 library("ggmap")

@@ -10,12 +10,7 @@
 #' @examples
 #' "hallo"
 measure_dist <- function(data_gasstations, lat, long){
-  # If getting the current location of user doesn't work
-  if (is.null(lat) & is.null(long)){
-    lat <- 46.524239
-    long <- 6.583689
-  }
-
+  # Add distance to dataset
   for(i in 1:length(data_gasstations[,1])){
     # Adding distances to dataset
     data_gasstations[i,6] <- geosphere::distHaversine(c(data_gasstations$lat[i],

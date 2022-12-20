@@ -1,30 +1,28 @@
-# test for measure dist
-test_that("test measure_dist", {
-  address_applicant <- "Avenue des Bains 14, 1007 Lausanne"
-  lat <- as.numeric(tmaptools::geocode_OSM(address_applicant,
-                                           keep.unfound = TRUE)$coords[2])
-  long <- as.numeric(tmaptools::geocode_OSM(address_applicant,
-                                            keep.unfound = TRUE)$coords[1])
+library(pkgprojectgroupc)
+library(testthat)
+library(dplyr)
+library(tibble)
 
-  addresses <- c("Unter den Linden 25, 10117 Berlin",
-                 "Avenue des Bains 12, 1007 Lausanne",
-                 "Kurfürstendamm 100, 10709 Berlin")
+# Load data
+data <- tibble(name = "M",
+               Address = "Vogelsangstr. 13 A, Gebenstorf",
+               price = 1.93,
+               lat = 47.48743,
+               lon = 8.243244,
+               distance = 1,
+               type = "unlead98",
+               brand = "avia")
 
-  data_gasstations <- data.frame(Address = c("Unter den Linden 25, 10117 Berlin",
-                                             "Avenue des Bains 12, 1007 Lausanne",
-                                             "Kurfürstendamm 100, 10709 Berlin"),
-                                 lat = tmaptools::geocode_OSM(addresses,
-                                                              keep.unfound = TRUE)$lat,
-                                 lon = tmaptools::geocode_OSM(addresses,
-                                                              keep.unfound = TRUE)$lon,
-                                 na1 = rep(1, 3),
-                                 na2 = rep(1, 3),
-                                 distance = rep(1, 3)
-  )
+# Enter lat and long
+lat <- 46.524239
+long <- 6.583689
 
-  expect_equal(measure_dist(data_gasstations = data_gasstations,
-                            lat = lat,
-                            long = long)[2,6],
-               0)
-})
+# test for measure_dist
+test_that("test measure_dist",
+            {
+              # Test function output: Correct distance calculation
+              expect_equal(round(measure_dist(data, lat, long)[[1,6]]), 213151)
+            }
+)
+
 
