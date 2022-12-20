@@ -12,7 +12,7 @@
 #' @export
 #' @examples
 #' "hallo"
-webscrap_data <- function(){
+webscrap_data <- function(save_csv_folder=here::here("data/gas_station_data.csv")){
   # # Fetch gas station informations
   # url for Aargau province gas stations
   url_Aargau <- "https://ch.fuelo.net/gasstations/province/230?lang=en"
@@ -272,7 +272,7 @@ webscrap_data <- function(){
   full_set$Address <- gsub('№','', full_set$Address)
 
   # write the data frame to a CSV file called "gas_station_data.csv" in the "data" folder
-  write.csv(full_set, here::here("data/gas_station_data.csv"))
+  write.csv(full_set, save_csv_folder)
 
   # Return full_set data
   return(full_set)

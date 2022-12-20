@@ -26,21 +26,20 @@ get_map_data <- function(stations_in_radius, lat, long, best_station){
 
 
   # Label the row entries as either gasstation or location applicant or best gas station
-  Locations <- rep("Hello", length(map_data[,1]))
+  Locations <- rep("tmp", length(map_data[,1]))
 
-  for(i in 1:length(map_data[,1])){
+  for(i in 1:nrow(map_data)){
     if(all(map_data[i,] == best_station[1,])){
       Locations[i] <- "best gas station"
     } else if(all(map_data[i,] == map_data[length(map_data[,1]),])){
       Locations[i] <- "location applicant"
-    } else{
+    } else {
       Locations[i] <- "gas station"
     }
   }
 
-  map_data <- cbind(map_data,
-                    Locations = Locations
-  )
+  # Add locations to data
+  map_data['Locations'] <- Locations
 
   # Return map data
   return(map_data)

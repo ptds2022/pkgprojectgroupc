@@ -63,7 +63,7 @@ run_app <- function(){
   # # Backend
   # Enter API code
   api_key <- readline(prompt="Please enter your Google API key:") # Prompting the user to enter API key
-  ggmap::register_google(key = api_key) # Register to google API using the user input api_key
+  ggmap::register_google(key = api_key) # Register to Google API using the user input api_key
 
   # Get latest data in a format that can be processed by the app
   data_update <- readline(prompt = "Do you want to update the data? ~5 minutes (Enter 1 (yes) 0 (no): ")
@@ -80,8 +80,11 @@ run_app <- function(){
       data_gasstations <- data_gasstations[data_gasstations$type == input$type,]
 
       # Add distances to data_gasstations
-      measure_dist(data_gasstations, input$lat, input$long)
-    })
+      if (is.null(input$lat) & is.null(input$long)){
+        measure_dist(data_gasstations, 46.524239, 6.583689) # If getting the current location of user doesn't work
+      } else {
+        measure_dist(data_gasstations, input$lat, input$long) # If current location of user is available
+    }})
 
     stations_in_radius <- reactive({
       # Determine best gas station
@@ -109,18 +112,20 @@ run_app <- function(){
     })
 
     mapInput <- reactive({
-
       # Access to Google map through the API
       if (is.null(input$lat) & is.null(input$long)){
-        ggmap::get_map(paste(46.524239, 6.583689), zoom = 12)  # If getting the current location of user doesn't work
+        ggmap::get_map(paste(46.524239, 6.583689), zoom = 10)  # If getting the current location of user doesn't work
       } else {
-        ggmap::get_map(paste(input$lat, input$long), zoom = 12) # If current location of user is available
+        ggmap::get_map(paste(input$lat, input$long), zoom = 10) # If current location of user is available
       }})
 
     map_dataInput <- reactive({
       # Get data for the map
-      get_map_data(stations_in_radius(), input$lat, input$long, best_station())
-    })
+      if (is.null(input$lat) & is.null(input$long)){
+        get_map_data(stations_in_radius(), 46.524239, 6.583689, best_station()) # If getting the current location of user doesn't work
+      } else {
+        get_map_data(stations_in_radius(), input$lat, input$long, best_station()) # If current location of user is available
+    }})
 
     output$map <- renderPlot({
       if(all(dim(best_station()) == c(0,8))){
@@ -130,7 +135,7 @@ run_app <- function(){
         ggmap::ggmap(mapInput()) +
           ggplot2::geom_point(data = map_dataInput(),
                               ggplot2::aes(x = lon, y = lat, color = Locations),
-                              size = 3) +
+                              size = 5) +
           ggplot2::theme(
             plot.background = ggplot2::element_rect(fill = 'transparent', color = NA),
             legend.background = ggplot2::element_rect(fill='transparent')
